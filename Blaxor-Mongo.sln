@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33423.256
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blaxor-Mongo", "Blaxor-Mongo\Blaxor-Mongo.csproj", "{3A75DC72-B76A-42BE-8CB1-7120712FF28B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A75DC72-B76A-42BE-8CB1-7120712FF28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A75DC72-B76A-42BE-8CB1-7120712FF28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A75DC72-B76A-42BE-8CB1-7120712FF28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A75DC72-B76A-42BE-8CB1-7120712FF28B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {591B926F-89C3-4165-A9B5-8FD4C679FA0F}
+	EndGlobalSection
+EndGlobal

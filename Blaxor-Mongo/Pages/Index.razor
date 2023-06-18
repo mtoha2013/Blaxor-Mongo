@@ -1,0 +1,62 @@
+﻿@page "/"
+@using Blaxor_Mongo.Models
+@using MongoDB.Bson
+@using MongoDB.Bson.Serialization
+@using MongoDB.Driver
+@using Newtonsoft.Json
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+
+@if (listData == null)
+{
+	<p><em>Loading...</em></p>
+}
+else
+{
+	<table class="table">
+	 <thead>
+	  <tr>
+	   <th>Id</th>
+	   <th>Name. </th>
+	   <th>Age.</th>
+	  </tr>
+	 </thead>
+	 <tbody>
+			@foreach (var itemData in listData)
+			{
+		  <tr>
+		   <td>@itemData.Id</td>
+		   <td>@itemData.Name</td>
+		   <td>@itemData.Age</td>
+		  </tr>
+			}
+	 </tbody>
+	</table>
+}
+
+@code {
+	private List<Employee> listData;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var dbClient = new MongoClient("mongodb://localhost:27017");
+		IMongoDatabase db = dbClient.GetDatabase("Toha");
+		var collection = db.GetCollection<Employee>("Employee");
+
+		listData = await collection.Find(_ => true).ToListAsync();
+		@*listData = BsonConvert.DeserializeObject<List<Employee>>(sListJson);*@
+
+		@*listData= BsonSerializer.Deserialize<List<Employee>>(listDataBson.ToBsonDocument());*@
+
+		var filterParam = Builders<Employee>.Filter.Eq("Name", "MToha");
+		var dataSelected = collection.Find(filterParam).FirstOrDefault();
+
+
+	}
+}
